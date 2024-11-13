@@ -11,6 +11,8 @@ import (
 
 var (
 	cfgFile string
+	version = "dev"
+	commit  = "none"
 
 	rootCmd = &cobra.Command{
 		Use:     "tub",
