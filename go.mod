@@ -1,4 +1,4 @@
-module tub
+module github.com/danawoodman/tub
 
 go 1.22.2
 
