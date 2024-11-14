@@ -27,6 +27,19 @@ func (self *Gizwits) AuthRequest(method, path string, payload any, token string)
 	return self.Request(method, path, payload, headers)
 }
 
+func (self *Gizwits) ControlRequest(deviceID string, payload any, token string) (*http.Response, error) {
+	return self.AuthRequest(
+		"POST",
+		fmt.Sprintf("/control/%s", deviceID),
+		&struct {
+			Attrs any `json:"attrs"`
+		}{
+			Attrs: payload,
+		},
+		token,
+	)
+}
+
 func (self *Gizwits) Request(method, path string, payload any, headers []Header) (*http.Response, error) {
 	base := "https://usapi.gizwits.com/app"
 

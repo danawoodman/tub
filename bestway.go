@@ -252,16 +252,8 @@ func (self *BestWay) GetDeviceStatus(id string) (*BestWayDeviceStatusResponse, e
 }
 
 func (self *BestWay) SetTemp(deviceID string, temp int) (*http.Response, error) {
-	return self.gizwits.AuthRequest(
-		"POST",
-		fmt.Sprintf("/control/%s", deviceID),
-		&struct {
-			Attrs BestWayTemperaturePayload `json:"attrs"`
-		}{
-			Attrs: BestWayTemperaturePayload{Temperature: temp},
-		},
-		self.token,
-	)
+	payload := BestWayTemperaturePayload{Temperature: temp}
+	return self.gizwits.ControlRequest(deviceID, payload, self.token)
 }
 
 func (self *BestWay) SetPower(deviceID string, power bool) (*http.Response, error) {
@@ -269,17 +261,8 @@ func (self *BestWay) SetPower(deviceID string, power bool) (*http.Response, erro
 	if power {
 		powerInt = POWER_ON
 	}
-
-	return self.gizwits.AuthRequest(
-		"POST",
-		fmt.Sprintf("/control/%s", deviceID),
-		&struct {
-			Attrs BestWayPowerPayload `json:"attrs"`
-		}{
-			Attrs: BestWayPowerPayload{Power: powerInt},
-		},
-		self.token,
-	)
+	payload := BestWayPowerPayload{Power: powerInt}
+	return self.gizwits.ControlRequest(deviceID, payload, self.token)
 }
 
 func (self *BestWay) SetHeat(deviceID string, heat bool) (*http.Response, error) {
@@ -287,30 +270,13 @@ func (self *BestWay) SetHeat(deviceID string, heat bool) (*http.Response, error)
 	if heat {
 		heatInt = HEAT_ON
 	}
-
-	return self.gizwits.AuthRequest(
-		"POST",
-		fmt.Sprintf("/control/%s", deviceID),
-		&struct {
-			Attrs BestWayHeatPayload `json:"attrs"`
-		}{
-			Attrs: BestWayHeatPayload{Heat: heatInt},
-		},
-		self.token,
-	)
+	payload := BestWayHeatPayload{Heat: heatInt}
+	return self.gizwits.ControlRequest(deviceID, payload, self.token)
 }
 
 func (self *BestWay) SetJets(deviceID string, jets int) (*http.Response, error) {
-	return self.gizwits.AuthRequest(
-		"POST",
-		fmt.Sprintf("/control/%s", deviceID),
-		&struct {
-			Attrs BestWayJetsPayload `json:"attrs"`
-		}{
-			Attrs: BestWayJetsPayload{Jets: jets},
-		},
-		self.token,
-	)
+	payload := BestWayJetsPayload{Jets: jets}
+	return self.gizwits.ControlRequest(deviceID, payload, self.token)
 }
 
 func (self *BestWay) SetFilter(deviceID string, filter bool) (*http.Response, error) {
@@ -318,17 +284,8 @@ func (self *BestWay) SetFilter(deviceID string, filter bool) (*http.Response, er
 	if filter {
 		filterInt = FILTER_ON
 	}
-
-	return self.gizwits.AuthRequest(
-		"POST",
-		fmt.Sprintf("/control/%s", deviceID),
-		&struct {
-			Attrs BestWayFilterPayload `json:"attrs"`
-		}{
-			Attrs: BestWayFilterPayload{Filter: filterInt},
-		},
-		self.token,
-	)
+	payload := BestWayFilterPayload{Filter: filterInt}
+	return self.gizwits.ControlRequest(deviceID, payload, self.token)
 }
 
 func (self *BestWay) SetScreenLock(deviceID string, screenLock bool) (*http.Response, error) {
@@ -336,15 +293,6 @@ func (self *BestWay) SetScreenLock(deviceID string, screenLock bool) (*http.Resp
 	if screenLock {
 		screenLockInt = SCREEN_UNLOCK
 	}
-
-	return self.gizwits.AuthRequest(
-		"POST",
-		fmt.Sprintf("/control/%s", deviceID),
-		&struct {
-			Attrs BestWayScreenLockPayload `json:"attrs"`
-		}{
-			Attrs: BestWayScreenLockPayload{ScreenLock: screenLockInt},
-		},
-		self.token,
-	)
+	payload := BestWayScreenLockPayload{ScreenLock: screenLockInt}
+	return self.gizwits.ControlRequest(deviceID, payload, self.token)
 }
