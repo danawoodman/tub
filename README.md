@@ -6,6 +6,8 @@
 
 ## Installation
 
+Either [download a release](https://github.com/danawoodman/tub/releases) for your OS, or install via `go install`:
+
 ```sh
 go install github.com/danawoodman/tub
 ```
