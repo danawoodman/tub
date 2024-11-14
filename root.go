@@ -13,10 +13,9 @@ var (
 	cfgFile string
 
 	rootCmd = &cobra.Command{
-		Use:     "tub",
-		Aliases: []string{"bestway"},
-		Short:   "A CLI for BestWay hottubs",
-		Long:    `Control and monitor your BestWay hottub`,
+		Use:   "tub",
+		Short: "A CLI for BestWay hottubs",
+		Long:  `Control and monitor your BestWay hottub`,
 	}
 )
 
