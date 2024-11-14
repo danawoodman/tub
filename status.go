@@ -9,8 +9,8 @@ import (
 
 var statusCmd = &cobra.Command{
 	Use:     "status",
-	Short:   "Get the status of your hottub",
-	Long:    `Get the status of your BestWay hottub.`,
+	Short:   "Get the status of your hot tub",
+	Long:    `Get the status of your BestWay hot tub.`,
 	PreRunE: requireAuth,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		token := viper.GetString("token")

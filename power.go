@@ -10,8 +10,8 @@ import (
 
 var powerCmd = &cobra.Command{
 	Use:     "power",
-	Short:   "Turn your hottub on or off",
-	Long:    `Turn your BestWay hottub on or off`,
+	Short:   "Turn your hot tub on or off",
+	Long:    `Turn your BestWay hot tub on or off`,
 	PreRunE: requireAuth,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if len(args) == 0 {

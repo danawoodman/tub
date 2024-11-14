@@ -8,8 +8,8 @@ import (
 
 var listCmd = &cobra.Command{
 	Use:     "list",
-	Short:   "List your hottubs",
-	Long:    `List your BestWay hottubs (and other devices)`,
+	Short:   "List your hot tubs",
+	Long:    `List your BestWay hot tubs (and other devices)`,
 	PreRunE: requireAuth,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		config := getConfig()

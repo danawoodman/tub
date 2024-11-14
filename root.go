@@ -14,8 +14,8 @@ var (
 
 	rootCmd = &cobra.Command{
 		Use:   "tub",
-		Short: "A CLI for BestWay hottubs",
-		Long:  `Control and monitor your BestWay hottub`,
+		Short: "A CLI for BestWay hot tubs",
+		Long:  `Control and monitor your BestWay hot tub`,
 	}
 )
 

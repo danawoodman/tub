@@ -13,8 +13,8 @@ var (
 
 	loginCmd = &cobra.Command{
 		Use:   "login",
-		Short: "Login to your hottub",
-		Long:  `Login to your BestWay hottub to generate authentication tokens for other requests.`,
+		Short: "Login to your hot tub",
+		Long:  `Login to your BestWay hot tub to generate authentication tokens for other requests.`,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			bw := NewBestWay()
 

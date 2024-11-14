@@ -12,8 +12,8 @@ import (
 
 var tempCmd = &cobra.Command{
 	Use:     "temp",
-	Short:   "Get or set the temperature of your hottub",
-	Long:    `Get or set the temperature of your BestWay hottub.`,
+	Short:   "Get or set the temperature of your hot tub",
+	Long:    `Get or set the temperature of your BestWay hot tub.`,
 	PreRunE: requireAuth,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		config := getConfig()

@@ -1,8 +1,8 @@
-# BestWay hottub CLI
+# BestWay hot tub CLI
 
 <img src="gopher-tub.png" width="300" />
 
-> A Golang powered CLI for controlling and monitoring BestWay hottubs
+> A Golang powered CLI for controlling and monitoring BestWay hot tubs
 
 ## Installation
 
@@ -10,7 +10,7 @@
 go install github.com/danawoodman/tub
 ```
 
-This provides a `tub` command that you can use to control your BestWay hottub (see usage below).
+This provides a `tub` command that you can use to control your BestWay hot tub (see usage below).
 
 ## Usage
 
