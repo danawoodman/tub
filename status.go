@@ -48,14 +48,14 @@ func init() {
 
 func renderStatus(status *BestWayDeviceStatusResponse) {
 	power := "Off"
-	if status.DeviceState.Power == 1 {
+	if status.DeviceState.Power == POWER_ON {
 		power = "On"
 	}
 
 	unit := getTemperatureUnit(status.DeviceState.TemperatureUnit)
 
 	screenLock := "Off"
-	if status.DeviceState.ScreenLock == 1 {
+	if status.DeviceState.ScreenLock == SCREEN_LOCK {
 		screenLock = "On"
 	}
 
@@ -67,12 +67,12 @@ func renderStatus(status *BestWayDeviceStatusResponse) {
 	}
 
 	heat := "Off"
-	if status.DeviceState.Heat == 4 {
+	if status.DeviceState.Heat > 0 {
 		heat = "On"
 	}
 
 	filter := "Off"
-	if status.DeviceState.Filter == 2 {
+	if status.DeviceState.Filter == FILTER_ON {
 		filter = "On"
 	}
 
