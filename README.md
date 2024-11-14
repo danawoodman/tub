@@ -1,6 +1,6 @@
 # BestWay hottub CLI
 
-![tub](gopher-tub.png)
+<img src="gopher-tub.png" width="300" />
 
 > A Golang powered CLI for controlling and monitoring BestWay hottubs
 
